@@ -3,10 +3,14 @@ This repo contains the following for an Air BnB clone project:
 
 ## Command Line Interpreter with the following Requisites and Functionalities
 * Built upon the CMD module
-* Capable of Creating New Objects
+* Create a new instance of BaseModel and save it to JSON and prints the ID
 * Retrieve data from a database
-* Operate on objects
-* Delete an Object
+* Operate on objects individually using commands
+* Destroy an instance based on the class name and ID
+* Update an instance based on the class name and ID by adding or updating attribute
+* Print a string representation of an instance based on the class name and ID
+* Save all user-made changes into a JSON file
+
 
 ## Use Case Examples
 ```bash
