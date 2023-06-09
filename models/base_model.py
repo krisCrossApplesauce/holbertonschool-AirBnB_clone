@@ -18,5 +18,8 @@ class BaseModel:
         self.updated_at = datetime.now()
 
     def to_dict(self):
-        # incomplete so i can push
-        pass
+        buff = self.__dict__copy()
+        buff['__class__'] = self.__class__.__name__
+        buff[self.created_at] = datetime.isoformat()
+        buff[self.updated_at] = datetime.isoformat()
+        
