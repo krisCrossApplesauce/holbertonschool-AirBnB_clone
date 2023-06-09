@@ -35,7 +35,7 @@ class FileStorage:
                 objects = json.load(file)
 
             for key, des_obj in objects.items():
-                class_name, obj_id = key.split('.')
+                class_name = key.split('.')[0] # shorthand for referencing id?
                 model = __import__('models.' + class_name, fromlist=[class_name])
                 cls = getattr(model, class_name)
                 obj = cls(**des_obj)
