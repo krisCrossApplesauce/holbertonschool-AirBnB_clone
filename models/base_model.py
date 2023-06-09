@@ -18,8 +18,8 @@ class BaseModel:
         self.updated_at = datetime.now()
 
     def to_dict(self):
-        obj_dict = self.__dict__copy()
+        obj_dict = self.__dict__.copy()
         obj_dict['__class__'] = self.__class__.__name__
-        obj_dict['created_at'] = obj_dict['created_at'].isoformat()
-        obj_dict['updated_at'] = obj_dict['updated_at'].isoformat()
+        obj_dict['created_at'] = obj_dict['created_at'].isoformat("T", "microseconds")
+        obj_dict['updated_at'] = obj_dict['updated_at'].isoformat("T", "microseconds")
         return obj_dict
