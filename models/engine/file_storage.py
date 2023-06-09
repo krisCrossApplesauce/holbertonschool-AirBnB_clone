@@ -1,11 +1,14 @@
 #!/usr/bin/python3
+""" a thing """
+import os
+
 
 class FileStorage:
-    def __init__(self, *args, **kwargs):
+    def __init__(self, file):
         #if new instance add
         # a call to the method: new(self) on 'storage'
-        self.__file_path = # stringpath to json file
-        self.__objects = # store obj as <class name>.id
+        self.__file_path = os.path.file(__file__)
+        self.__objects = []
 
     def all(self):
         return self.__objects
