@@ -1,8 +1,10 @@
 #!/usr/bin/python3
+""" yup """
 import json
 import os
 
 class FileStorage:
+    """ yup """
     def __init__(self):
         #if new instance add
         # a call to the method: new(self) on 'storage'
