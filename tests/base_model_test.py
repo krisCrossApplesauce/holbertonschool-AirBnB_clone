@@ -22,8 +22,8 @@ class TestBase(unittest.TestCase):
         """
         b2 = BaseModel()
         b2 = self.__dict__copy()
-        self.assertIsInstance(self.create_at, _______)
-        self.assertIsInstance(self.updated_at, _______)
+        self.assertIsInstance(self.create_at, "%Y-%m-%dT%H:%M:%S.%f")
+        self.assertIsInstance(self.updated_at, "%Y-%m-%dT%H:%M:%S.%f")
         for element in self.__dict__
             self.assertEqual(b1['class'], self.__dict__.__class__) 
                 # compare created dict keys to class names of the instance
