@@ -6,8 +6,8 @@ from models.base_model import BaseModel
 
 class FileStorage:
     """read/write and serialization for json storage"""
-    __objects = dict()
     __file_path = "file.json"
+    __objects = {}
     #__models = model_classes ???
 
     def all(self):
@@ -31,11 +31,11 @@ class FileStorage:
     def reload(self): # double check this!
         """deseriealize json file into __objects if it exists"""
         if os.path.exists(self.__file_path):
-            with open(self.__file_path, 'r') as fp:
-                for key, obj_data in json.load(fp).items():
-                    if key not in self.__objects:
-                        cls = self.__models[obj_data["__class__"]]
+            with open(self.__file_path, 'r') as file:
+                for key, obj_data in json.load(file).items():
+                    if key not in self.__objects or obj_data not in self.__objects[key]:
+                        cls = eval(obj_data["__class__"])
                         self.__objects[key] = cls(**obj_data)
         else:
-            with open(self.__file_path, 'w') as fp:
-                fp.write("{}")
+            with open(self.__file_path, 'w') as file:
+                file.write("{}")
