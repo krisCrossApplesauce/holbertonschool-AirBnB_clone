@@ -3,7 +3,7 @@
 import cmd
 
 
-class HBNBCCommand(cmd.Cmd):
+class HBNBCommand(cmd.Cmd):
     """ console """
     prompt = 'Shell> '
 
@@ -34,4 +34,4 @@ class HBNBCCommand(cmd.Cmd):
     # update
 
 if __name__ == '__main__':
-    HBNBCCommand().cmdloop()
+    HBNBCommand().cmdloop()
