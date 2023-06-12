@@ -40,4 +40,3 @@ class FileStorage:
         else:
             with open(FileStorage.__file_path, 'w') as fp:
                 fp.write("{}")
-
