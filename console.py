@@ -52,7 +52,7 @@ class HBNBCommand(cmd.Cmd):
         if class_name not in models_dict:
             print("** class doesn't exist **")
             return
-        if len(args) < 2:
+        if len(args) < 2: #this checks if id exists
             print("** instance id missing **")
             return
         key = (f"{class_name}.{instance_id}")
