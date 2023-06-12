@@ -9,7 +9,7 @@ class FileStorage:
         #if new instance add
         # a call to the method: new(self) on 'storage'
         self.__file_path = ""
-        self.__objects = []
+        self.__objects = {}
 
     def all(self):
         return self.__objects
