@@ -9,8 +9,8 @@ class FileStorage:
     def __init__(self):
         self.__objects = dict()
         self.__file_path = "file.json"
-        self.__objects = {}
-
+        self.models = model_classes
+        
     def all(self):
         """return dict of __objects"""
         return self.__objects
