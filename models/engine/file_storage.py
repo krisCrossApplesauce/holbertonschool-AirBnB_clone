@@ -33,7 +33,7 @@ class FileStorage:
         if os.path.exists(self.__file_path):
             with open(self.__file_path, 'r') as file:
                 for key, obj_data in json.load(file).items():
-                    if key not in self.__objects or obj_data not in self.__objects[key]:
+                    if key not in self.__objects:
                         cls = eval(obj_data["__class__"])
                         self.__objects[key] = cls(**obj_data)
         else:
