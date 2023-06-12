@@ -5,7 +5,7 @@ import cmd
 
 class HBNBCommand(cmd.Cmd):
     """ console """
-    prompt = 'Shell> '
+    prompt = '(hbnb)'
 
     def do_hello(self, line):
         """Prints a greeting message"""
