@@ -8,7 +8,6 @@ class FileStorage:
     """read/write and serialization for json storage"""
     __file_path = "file.json"
     __objects = {}
-    #__models = model_classes ???
 
     def all(self):
         """return dict of __objects"""
@@ -24,7 +23,6 @@ class FileStorage:
         ser_obj = {}
         for key, obj in self.__objects.items():
             ser_obj[key] = obj.to_dict()
-
         with open(self.__file_path, 'w') as file:
             json.dump(ser_obj, file)
 
@@ -34,8 +32,8 @@ class FileStorage:
             with open(self.__file_path, 'r') as file:
                 for key, obj_data in json.load(file).items():
                     if key not in self.__objects:
-                        cls = eval(obj_data["__class__"])
-                        self.__objects[key] = cls(**obj_data)
+                        obj = eval(obj_data["__class__"])
+                        self.__objects[key] = obj(**obj_data)
         else:
             with open(self.__file_path, 'w') as file:
                 file.write("{}")
