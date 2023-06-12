@@ -21,13 +21,16 @@ class BaseModel:
             storage.save()
 
     def __str__(self):
-        return f"[{self.__class__.__name__}] ({self.id}) {self.__dict__}"
+        """represent func in string format"""
+        return (f"[{self.__class__.__name__}] ({self.id}) {self.__dict__}")
 
     def save(self):
+        """save and update uuid"""
         self.updated_at = datetime.now()
         storage.save()
 
     def to_dict(self):
+        """represent instance in dict format"""
         obj_dict = self.__dict__.copy()
         obj_dict['__class__'] = self.__class__.__name__
         obj_dict['created_at'] = obj_dict['created_at'].isoformat("T", "microseconds")
