@@ -2,7 +2,7 @@
 """ a class that defines all common attributes/methods for other classes """
 import uuid
 from datetime import datetime
-from models import storage
+from models
 
 
 class BaseModel:
