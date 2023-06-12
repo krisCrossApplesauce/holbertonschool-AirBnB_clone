@@ -7,15 +7,15 @@ class HBNBCommand(cmd.Cmd):
     """ console """
     prompt = '(hbnb)'
 
-    def do_hello(self, line):
+    def do_hello(self, arg):
         """Prints a greeting message"""
         print("Hello, world!")
 
-    def do_quit(self, line):
+    def do_quit(self, arg):
         """Exits the shell"""
         return True
 
-    def do_EOF(self, line):
+    def do_EOF(self, arg):
         """Exits the shell"""
         return True
 
@@ -29,11 +29,16 @@ class HBNBCommand(cmd.Cmd):
 
     # def show
 
-    # def destroy
+    def do_destroy(self, line):
+        if line is not None and line != "":
+            args = line.split()
+        else:
+            print("** class name missing **")
 
-    # all
+    def do_all(self, line):
+        pass
 
-    # update
+    # def update
 
 if __name__ == '__main__':
     HBNBCommand().cmdloop()
