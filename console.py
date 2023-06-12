@@ -3,7 +3,7 @@
 import cmd
 
 
-class HBNBCCommand(cmd.Cmd):
+class HBNBCommand(cmd.Cmd):
     """ console """
     prompt = 'Shell> '
 
