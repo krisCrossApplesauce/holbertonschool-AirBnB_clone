@@ -2,12 +2,13 @@
 """ a class that defines all common attributes/methods for other classes """
 import uuid
 from datetime import datetime
-from models import storage
+import models
 
 
 class BaseModel:
     """ the base class for all other classes in this project """
     def __init__(self, *args, **kwargs):
+        from models import storage
         if kwargs:
                 if "__class__" in kwargs:
                     del kwargs["__class__"]
@@ -19,6 +20,7 @@ class BaseModel:
             self.id = str(uuid.uuid4())
             self.created_at = datetime.now()
             self.updated_at = datetime.now()
+            storage.save()
 
     def __str__(self):
         """represent func in string format"""
@@ -26,6 +28,7 @@ class BaseModel:
 
     def save(self):
         """save and update uuid"""
+        from models import storage
         self.updated_at = datetime.now()
         storage.save()
 
