@@ -9,7 +9,7 @@ class FileStorage:
     def __init__(self):
         #if new instance add
         # a call to the method: new(self) on 'storage'
-        self.__file_path = ""
+        self.__file_path = "file.json"
         self.__objects = {}
 
     def all(self):
