@@ -15,7 +15,7 @@ class HBNBCommand(cmd.Cmd):
         """Exits the shell"""
         return True
 
-    def EOF(self):
+    def do_EOF(self, line):
         """Exits the shell"""
         return True
 
