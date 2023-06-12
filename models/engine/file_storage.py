@@ -2,7 +2,7 @@
 """ yup """
 import json
 import os
-# from models.base_model import BaseModel # not accessed error
+from models.base_model import BaseModel
 
 class FileStorage:
     """ read/write and serialization for json storage """
@@ -30,14 +30,13 @@ class FileStorage:
             json.dump(ser_obj, file)
     
     def reload(self):
-        """reload SUCKS I HATE IT >:("""
-        if os.path.isfile(self.__file_path):
-            with open(self.__file_path, 'r') as file:
-                objects = json.load(file)
-
-            for key, des_obj in objects.items():
-                class_name = key.split('.')[0] # shorthand for referencing id?
-                model = __import__('models.' + class_name, fromlist=[class_name])
-                cls = getattr(model, class_name)
-                obj = cls(**des_obj)
-                self.__objects[key] = obj
+        """deseriealize json file into __objects if it exists"""
+        if os.path.exists(FileStorage.__file_path):
+            with open(FileStorage.__file_path, 'r') as fp:
+                for k, obj_data in json.load(fp).items():
+                    if k not in FileStorage.__objects:
+                        cls = FileStorage.__models[obj_data["__class__"]]
+                        FileStorage.__objects[k] = cls(**obj_data)
+        else:
+            with open(FileStorage.__file_path, 'w') as fp:
+                fp.write("{}")
