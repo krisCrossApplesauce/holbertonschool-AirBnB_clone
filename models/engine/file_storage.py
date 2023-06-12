@@ -29,14 +29,14 @@ class FileStorage:
         with open(self.__file_path, 'w') as file:
             json.dump(ser_obj, file)
 
-    def reload(self):
+    def reload(self): # double check this!
         """deseriealize json file into __objects if it exists"""
-        if os.path.exists(FileStorage.__file_path):
-            with open(FileStorage.__file_path, 'r') as fp:
+        if os.path.exists(self.__file_path):
+            with open(self.__file_path, 'r') as fp:
                 for key, obj_data in json.load(fp).items():
-                    if key not in FileStorage.__objects:
-                        cls = FileStorage.__models[obj_data["__class__"]]
-                        FileStorage.__objects[key] = cls(**obj_data)
+                    if key not in self.__objects:
+                        cls = self.__models[obj_data["__class__"]]
+                        self.__objects[key] = cls(**obj_data)
         else:
-            with open(FileStorage.__file_path, 'w') as fp:
+            with open(self.__file_path, 'w') as fp:
                 fp.write("{}")
