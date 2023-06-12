@@ -6,10 +6,9 @@ from models.base_model import BaseModel
 
 class FileStorage:
     """read/write and serialization for json storage"""
-    def __init__(self):
-        self.__objects = dict()
-        self.__file_path = "file.json"
-        self.__objects = {}
+    __objects = dict()
+    __file_path = "file.json"
+    __objects = {}
 
     def all(self):
         """return dict of __objects"""
