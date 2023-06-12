@@ -27,7 +27,7 @@ class BaseModel:
     def save(self):
         """save and update uuid"""
         self.updated_at = datetime.now()
-        storage.save(self)
+        storage.save()
 
     def to_dict(self):
         """represent instance in dict format"""
