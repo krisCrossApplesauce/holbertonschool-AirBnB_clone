@@ -61,7 +61,20 @@ class HBNBCommand(cmd.Cmd):
             return
         print(obj_dict[key])
 
-    # def destroy
+    def do_destroy(self, line):
+        if line is None and line == "":
+            print("** class name missing **")
+        else:
+            args = line.split(" ")
+            if args[0] not in models:
+                print("** class doesn't exist **")
+            elif len(args) < 2:
+                print("** instance id missing **")
+            elif "{args[0]}.{args[1]}" not in models.storage.all():
+                print("** no instance found **")
+            else:
+                # delete the instance
+                pass
 
     # all
 
