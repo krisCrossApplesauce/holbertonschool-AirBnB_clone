@@ -1,6 +1,10 @@
+#!/usr/bin/python3
+""" console """
 import cmd
 
+
 class HBNBCCommand(cmd.Cmd):
+    """ console """
     prompt = 'Shell> '
 
     def do_hello(self, line):
