@@ -15,11 +15,13 @@ class HBNBCommand(cmd.Cmd):
         """Exits the shell"""
         return True
 
+    def EOF(self):
+        """Exits the shell"""
+        return True
+
     # Override emptyline() to avoid repeating the last command
     def emptyline(self):
         pass
-
-    # def quit and EOF
 
     # def help
 
