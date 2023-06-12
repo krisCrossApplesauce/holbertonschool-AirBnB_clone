@@ -8,7 +8,7 @@ class FileStorage:
     """read/write and serialization for json storage"""
     __objects = dict()
     __file_path = "file.json"
-    __objects = {}
+    #__models = model_classes ???
 
     def all(self):
         """return dict of __objects"""
