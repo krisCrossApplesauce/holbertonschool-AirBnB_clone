@@ -61,8 +61,6 @@ class HBNBCommand(cmd.Cmd):
             return
         print(obj_dict[key])
 
-    # def show
-
     # def destroy
 
     # all
