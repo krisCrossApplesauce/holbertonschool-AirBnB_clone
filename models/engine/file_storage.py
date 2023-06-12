@@ -30,7 +30,7 @@ class FileStorage:
             json.dump(ser_obj, file)
     
     def reload(self):
-        """"""
+        """reload SUCKS I HATE IT >:("""
         if os.path.isfile(self.__file_path):
             with open(self.__file_path, 'r') as file:
                 objects = json.load(file)
