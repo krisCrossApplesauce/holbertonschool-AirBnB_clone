@@ -2,32 +2,32 @@
 """ yup """
 import json
 import os
-from models.base_model import BaseModel # not accessed error
+# from models.base_model import BaseModel # not accessed error
 
 class FileStorage:
-    """ yup """
+    """ read/write and serialization for json storage """
     def __init__(self):
-        
-        self.__file_path = ""
+        self.__objects = dict()
+        self.__file_path = "file.json"
         self.__objects = {}
 
     def all(self):
+        """return dict of __objects"""
         return self.__objects
     
     def new(self, obj):
+        """add a new obj to __objects"""
         key = "{}.{}".format(obj.__class__.__name__, obj.id)
         self.__objects[key] = obj
 
     def save(self):
+        """serialize obj to json file in __file_path"""
         ser_obj = {}
         for key, obj in self.__objects.items():
             ser_obj[key] = obj.to_dict()
     
         with open(self.__file_path, 'w') as file:
             json.dump(ser_obj, file)
-
-        #create a string representation of the saved filepath
-        #saved to __file_path
     
     def reload(self):
         if os.path.isfile(self.__file_path):
