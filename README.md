@@ -33,6 +33,10 @@ EOF  all  create  destroy  help  quit  show  update
 * Karis Rachel Richardson
 
 
+## CMD Flowchart
+![flowchart gumapple](https://github.com/krisCrossApplesauce/holbertonschool-AirBnB_clone/assets/23125776/6615bb64-22da-4b74-8cbc-6c1ceabd3670)
+
+
 
 
 
