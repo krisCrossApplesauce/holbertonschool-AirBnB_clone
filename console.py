@@ -1,7 +1,11 @@
+#!/usr/bin/python3
+""" console """
 import cmd
 
-class HBNBCCommand(cmd.Cmd):
-    prompt = 'Shell> '
+
+class HBNBCommand(cmd.Cmd):
+    """ console """
+    prompt = '(hbnb)'
 
     def do_hello(self, line):
         """Prints a greeting message"""
@@ -11,11 +15,13 @@ class HBNBCCommand(cmd.Cmd):
         """Exits the shell"""
         return True
 
+    def EOF(self):
+        """Exits the shell"""
+        return True
+
     # Override emptyline() to avoid repeating the last command
     def emptyline(self):
         pass
-
-    # def quit and EOF
 
     # def help
 
