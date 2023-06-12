@@ -7,8 +7,7 @@ from models.base_model import BaseModel # not accessed error
 class FileStorage:
     """ yup """
     def __init__(self):
-        #if new instance add
-        # a call to the method: new(self) on 'storage'
+        
         self.__file_path = ""
         self.__objects = {}
 
