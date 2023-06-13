@@ -47,24 +47,19 @@ class HBNBCommand(cmd.Cmd):
     def do_show(self, arg):
         """print string rep of instance"""
         args = arg.split()
-        class_name = args[0]
-        instance_id = args[1]
-        obj_dict = models.storage.all() # double check this!
+        obj_dict = models.storage.all()
 
         if not args:
             print("** class name missing **")
-            return
-        if class_name not in models_dict.keys():
+        elif args[0] not in models_dict.keys():
             print("** class doesn't exist **")
-            return
-        if len(args) < 2: #this checks if id exists
+        elif len(args) < 2: #this checks if id exists
             print("** instance id missing **")
-            return
-        key = (f"{class_name}.{instance_id}")
-        if key not in obj_dict:
-            print("** no instance found **")
-            return
-        print(obj_dict[key])
+        else:
+            key = (f"{args[0]}.{args[1]}")
+            if key not in obj_dict:
+                print("** no instance found **")
+            print(obj_dict[key])
 
     def do_destroy(self, line):
         """ detroys given instance """
@@ -83,15 +78,10 @@ class HBNBCommand(cmd.Cmd):
 
     def do_all(self, arg):
         """prints string rep of existing instances"""
-        buff_list = []
         if arg not in models_dict.keys() or arg != "":
             print("** class doesn't exist **")
-            return
         else:
-            for obj in models.storage.all():
-                if isinstance(obj, models_dict[arg]):
-                    buff_list.append(str(obj))
-        return buff_list
+            print(models.storage.all())
 
     def do_update(self, arg):
         """UPDATES an inst class name and id"""
