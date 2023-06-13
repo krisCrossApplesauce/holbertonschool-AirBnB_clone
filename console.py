@@ -89,9 +89,9 @@ class HBNBCommand(cmd.Cmd):
         args = arg.split()
         if not arg:
             print("** class name missing **")
-        elif args[0] not in models_dict:
+        elif args[0] not in models_dict.keys():
             print("** class doesn't exist **")
-        elif not models.storage.all():
+        elif f"{args[0]}.{args[1]}" not in models.storage.all():
             print("** no instance found **")
         elif len(args) < 2:
             print("** instance id missing **")
