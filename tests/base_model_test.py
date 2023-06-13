@@ -16,9 +16,18 @@ class TestBase(unittest.TestCase):
         TEST:
         BaseMethod - save creates a save file
         """
-        self.assertNotEqual(self.model.created_at, self.model.updated_at)
+        new_model = BaseModel()
+        save = new_model.updated_at
+        new_model.save()
+        self.assertTrue(os.path.exists("file.json"))
+        save2 = new_model.updated_at
+        self.assertNotEqual(save, save2)
 
     def test_created_at(self):
+        """
+        TEST:
+        creation and updating makes new uuid4
+        """
         new_model = BaseModel()
         self.assertIsInstance(new_model.create_at, "%Y-%m-%dT%H:%M:%S.%f")
         new_model2 = BaseModel()
