@@ -91,10 +91,10 @@ class HBNBCommand(cmd.Cmd):
             print("** class name missing **")
         elif args[0] not in models_dict.keys():
             print("** class doesn't exist **")
-        elif f"{args[0]}.{args[1]}" not in models.storage.all():
-            print("** no instance found **")
         elif len(args) < 2:
             print("** instance id missing **")
+        elif f"{args[0]}.{args[1]}" not in models.storage.all():
+            print("** no instance found **")
         elif len(args) < 3:
             print("** attribute name missing **")
         elif len(args) < 4:
