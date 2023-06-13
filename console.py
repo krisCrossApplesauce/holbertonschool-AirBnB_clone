@@ -81,15 +81,10 @@ class HBNBCommand(cmd.Cmd):
 
     def do_all(self, arg):
         """prints string rep of existing instances"""
-        buff_list = []
         if arg not in models_dict.keys() and arg != "":
             print("** class doesn't exist **")
-            return
         else:
-            for obj in models.storage.all():
-                if isinstance(obj, models_dict[arg]):
-                    buff_list.append(str(obj))
-        return buff_list
+            print(models.storage.all())
 
     # update
 
