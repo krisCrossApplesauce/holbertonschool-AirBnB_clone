@@ -4,8 +4,10 @@ import cmd
 import os
 import json
 from models.models import models_dict
-from model.base_model import BaseModel
-from file_storage import FileStorage
+from models.base_model import BaseModel
+from models.engine.file_storage import FileStorage
+from models import storage
+import models
 
 
 class HBNBCommand(cmd.Cmd):
@@ -47,12 +49,12 @@ class HBNBCommand(cmd.Cmd):
         args = arg.split()
         class_name = args[0]
         instance_id = args[1]
-        obj_dict = models_dict.storage.all() # double check this!
+        obj_dict = models.storage.all() # double check this!
 
         if not args:
             print("** class name missing **")
             return
-        if class_name not in models_dict:
+        if class_name not in models_dict.keys():
             print("** class doesn't exist **")
             return
         if len(args) < 2: #this checks if id exists
@@ -65,31 +67,31 @@ class HBNBCommand(cmd.Cmd):
         print(obj_dict[key])
 
     def do_destroy(self, line):
+        """ detroys given instance """
         if line is None and line == "":
             print("** class name missing **")
         else:
             args = line.split(" ")
-            if args[0] not in models_dict:
+            if args[0] not in models_dict.keys():
                 print("** class doesn't exist **")
             elif len(args) < 2:
                 print("** instance id missing **")
-            elif "{args[0]}.{args[1]}" not in models_dict.storage.all():
+            elif "{args[0]}.{args[1]}" not in models.storage.all():
                 print("** no instance found **")
             else:
                 with open("file.json", "w") as file:
-                    json.dump(data, file) # CHANGES NEEDED HERE <----------------------
+                    models.storage.remove(args[0].args[1])
                 pass
 
     def do_all(self, arg):
         """prints string rep of existing instances"""
         buff_list = []
-        cls = models_dict.classes.get("class_name")
         if arg not in models_dict.keys() and arg != "":
             print("** class doesn't exist **")
             return
         else:
-            for key, obj in models_dict.classes.items():
-                if isinstance(obj, cls):
+            for obj in models.storage.all():
+                if isinstance(obj, models_dict[arg]):
                     buff_list.append(str(obj))
         return buff_list
 
