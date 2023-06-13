@@ -37,8 +37,8 @@ EOF  all  create  destroy  help  quit  show  update
 ```
 
 ## Authors
-* Evan Parker Newman-Chock
-* Karis Rachel Richardson
+* Evan Parker Newman-Chock<gumquat@gmail.com>
+* Karis Rachel Richardson<karisrr2203@gmail.com>
 
 
 ## CMD Flowchart
