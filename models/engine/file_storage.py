@@ -44,4 +44,4 @@ class FileStorage:
     def remove(self, key):
         """REMOVE THE THING and then save the change to the json file"""
         del self.__objects[key]
-        self.save(self)
+        self.save()

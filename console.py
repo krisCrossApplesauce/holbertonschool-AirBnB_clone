@@ -68,7 +68,7 @@ class HBNBCommand(cmd.Cmd):
 
     def do_destroy(self, line):
         """ detroys given instance """
-        if line is None and line == "":
+        if line is None or line == "":
             print("** class name missing **")
         else:
             args = line.split()
@@ -76,11 +76,10 @@ class HBNBCommand(cmd.Cmd):
                 print("** class doesn't exist **")
             elif len(args) < 2:
                 print("** instance id missing **")
-            elif "{args[0]}.{args[1]}" not in models.storage.all():
+            elif f"{args[0]}.{args[1]}" not in models.storage.all():
                 print("** no instance found **")
             else:
-                with open("file.json", "w") as file:
-                    models.storage.remove(f"{args[0]}.{args[1]}")
+                models.storage.remove(f"{args[0]}.{args[1]}")
 
     def do_all(self, arg):
         """prints string rep of existing instances"""
