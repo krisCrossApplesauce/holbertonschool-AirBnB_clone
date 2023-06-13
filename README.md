@@ -2,7 +2,7 @@
 This repo contains the following for an Air BnB clone project:
 
 ## Description
-This repo iaims to act as a clone build of the web application AirBnB that aims to mimic its command interpretation functionality. The command line can be used to manage data saved to a json file storage system.
+This repo aims to act as a clone build of the web application AirBnB that aims to mimic its command interpretation functionality. The command line can be used to manage data saved to a json file storage system.
 
 ## Instructions for Use
 * Clone this repo from github and Install Python3 if not currently installed

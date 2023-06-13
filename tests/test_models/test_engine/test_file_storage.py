@@ -1,6 +1,5 @@
 #!/usr/bin/python3
-"""TES:
- File storage"""
+"""TEST: File storage"""
 import unittest
 import json
 import os
