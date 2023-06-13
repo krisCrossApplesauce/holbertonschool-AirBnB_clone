@@ -1,5 +1,8 @@
 #!/usr/bin/python3
-""" yup """
+"""
+location for storing data
+after EOF and exiting
+"""
 import json
 import os
 from models.base_model import BaseModel

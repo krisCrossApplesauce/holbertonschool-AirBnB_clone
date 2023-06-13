@@ -1,8 +1,11 @@
 #!/usr/bin/python3
 """ console """
 import cmd
+import os
+import json
 from models.models import models_dict
 from model.base_model import BaseModel
+from file_storage import FileStorage
 
 
 class HBNBCommand(cmd.Cmd):
@@ -73,10 +76,22 @@ class HBNBCommand(cmd.Cmd):
             elif "{args[0]}.{args[1]}" not in models_dict.storage.all():
                 print("** no instance found **")
             else:
-                # delete the instance
+                with open("file.json", "w") as file:
+                    json.dump(data, file) # CHANGES NEEDED HERE <----------------------
                 pass
 
-    # all
+    def do_all(self, arg):
+        """prints string rep of existing instances"""
+        buff_list = []
+        cls = models_dict.classes.get("class_name")
+        if arg not in models_dict.keys() and arg != "":
+            print("** class doesn't exist **")
+            return
+        else:
+            for key, obj in models_dict.classes.items():
+                if isinstance(obj, cls):
+                    buff_list.append(str(obj))
+        return buff_list
 
     # update
 
