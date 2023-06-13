@@ -47,20 +47,24 @@ class HBNBCommand(cmd.Cmd):
     def do_show(self, arg):
         """print string rep of instance"""
         args = arg.split()
-        obj_dict = models.storage.all()
+        class_name = args[0]
+        instance_id = args[1]
+        obj_dict = models.storage.all() # double check this!
 
         if not args:
             print("** class name missing **")
-        elif args[0] not in models_dict.keys():
+            return
+        if class_name not in models_dict.keys():
             print("** class doesn't exist **")
-        elif len(args) < 2: #this checks if id exists
+            return
+        if len(args) < 2: #this checks if id exists
             print("** instance id missing **")
-        else:
-            key = (f"{args[0]}.{args[1]}")
-            if key not in obj_dict:
-                print("** no instance found **")
-            else:
-                print(obj_dict[key])
+            return
+        key = (f"{class_name}.{instance_id}")
+        if key not in obj_dict:
+            print("** no instance found **")
+            return
+        print(obj_dict[key])
 
     def do_destroy(self, line):
         """ detroys given instance """
@@ -79,12 +83,33 @@ class HBNBCommand(cmd.Cmd):
 
     def do_all(self, arg):
         """prints string rep of existing instances"""
-        if arg not in models_dict.keys() and arg != "":
+        buff_list = []
+        if arg not in models_dict.keys() or arg != "":
             print("** class doesn't exist **")
+            return
         else:
-            print(models.storage.all())
+            for obj in models.storage.all():
+                if isinstance(obj, models_dict[arg]):
+                    buff_list.append(str(obj))
+        return buff_list
 
-    # update
+    def do_update(self, arg):
+        """UPDATES an inst class name and id"""
+        args = arg.split()
+        if not arg:
+            print("** class name is missing **")
+        if arg[0] not in models_dict:
+            print("** class doesn't exists **")
+        if not models.storage.all():
+            print("** no instance found **")
+        if len(args) < 2:
+            print("** instance id missing **")
+        if len(args) < 3:
+            print("** attribute name missing **")
+        if len(args) < 4:
+            print("** value missing **")
+        setattr(models.storage.all(), args[0], args[3])
+        args[3].save()
 
 if __name__ == '__main__':
     HBNBCommand().cmdloop()
