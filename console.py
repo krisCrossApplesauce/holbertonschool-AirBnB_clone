@@ -71,7 +71,7 @@ class HBNBCommand(cmd.Cmd):
         if line is None or line == "":
             print("** class name missing **")
         else:
-            args = line.split(" ")
+            args = line.split()
             if args[0] not in models_dict.keys():
                 print("** class doesn't exist **")
             elif len(args) < 2:
