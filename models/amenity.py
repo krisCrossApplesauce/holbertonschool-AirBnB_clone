@@ -9,7 +9,6 @@ class Amenity(BaseModel):
             name: string or empty string
     """
 
-
     name = ""
 
     def __init__(self, *args, **kwargs):
