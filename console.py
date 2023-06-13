@@ -80,7 +80,7 @@ class HBNBCommand(cmd.Cmd):
                 print("** no instance found **")
             else:
                 with open("file.json", "w") as file:
-                    models.storage.remove(args[0].args[1])
+                    models.storage.remove("{args[0]}.{args[1]}")
                 pass
 
     def do_all(self, arg):
