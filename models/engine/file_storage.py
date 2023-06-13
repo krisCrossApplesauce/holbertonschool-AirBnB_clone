@@ -21,6 +21,11 @@ class FileStorage:
         key = "{}.{}".format(obj.__class__.__name__, obj.id)
         self.__objects[key] = obj
 
+    def update(self, obj, key, value):
+        """ update """
+        setattr(obj, key, value)
+        self.save()
+
     def save(self):
         """serialize obj to json file in __file_path"""
         ser_obj = {}

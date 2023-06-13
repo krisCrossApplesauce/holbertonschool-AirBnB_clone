@@ -4,6 +4,11 @@ This repo contains the following for an Air BnB clone project:
 ## Description
 This repo iaims to act as a clone build of the web application AirBnB that aims to mimic its command interpretation functionality. The command line can be used to manage data saved to a json file storage system.
 
+## Instructions for Use
+* Clone this repo from github and Install Python3 if not currently installed
+* Open python terminal and navigate to this projects directory
+* run './console.py', or, python3 console.py
+
 ## Command Line Interpreter with the following Requisites and Functionalities
 * Built upon the CMD module
 * Create a new instance of BaseModel and save it to JSON and prints the ID
