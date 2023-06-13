@@ -59,7 +59,8 @@ class HBNBCommand(cmd.Cmd):
             key = (f"{args[0]}.{args[1]}")
             if key not in obj_dict:
                 print("** no instance found **")
-            print(obj_dict[key])
+            else:
+                print(obj_dict[key])
 
     def do_destroy(self, line):
         """ detroys given instance """
@@ -78,7 +79,7 @@ class HBNBCommand(cmd.Cmd):
 
     def do_all(self, arg):
         """prints string rep of existing instances"""
-        if arg not in models_dict.keys() or arg != "":
+        if arg not in models_dict.keys() and arg != "":
             print("** class doesn't exist **")
         else:
             print(models.storage.all())
