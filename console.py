@@ -47,18 +47,16 @@ class HBNBCommand(cmd.Cmd):
     def do_show(self, arg):
         """print string rep of instance"""
         args = arg.split()
-        class_name = args[0]
-        instance_id = args[1]
         obj_dict = models.storage.all()
 
         if not args:
             print("** class name missing **")
-        elif class_name not in models_dict.keys():
+        elif args[0] not in models_dict.keys():
             print("** class doesn't exist **")
         elif len(args) < 2: #this checks if id exists
             print("** instance id missing **")
         else:
-            key = (f"{class_name}.{instance_id}")
+            key = (f"{args[0]}.{args[1]}")
             if key not in obj_dict:
                 print("** no instance found **")
             else:
