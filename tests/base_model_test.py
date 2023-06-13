@@ -13,20 +13,25 @@ class TestBase(unittest.TestCase):
         """TEST: save creates a saved file"""
         b1 = BaseModel()
         saved_data = BaseModel.save([b1])
-        self.assertEqual(len(saved_data), b1.updated_at) 
+        self.assertEqual(len(saved_data), b1.updated_at)
             # compare saved data to updated_at of new instance
 
     def test_dict(self):
         """TEST: dict creates two strings for each updated and created
         also, the created class for the instance == class name
         """
-        b2 = BaseModel()
+        b1 = BaseModel()
         b2 = self.__dict__copy()
         self.assertIsInstance(self.create_at, "%Y-%m-%dT%H:%M:%S.%f")
         self.assertIsInstance(self.updated_at, "%Y-%m-%dT%H:%M:%S.%f")
-        for element in self.__dict__
-            self.assertEqual(b1['class'], self.__dict__.__class__) 
+        for element in self.__dict__:
+            self.assertEqual(b1['class'], self.__dict__.__class__)
                 # compare created dict keys to class names of the instance
+
+
+    # save
+
+    # init args / kwargs
 
 """DO NOT REMOVE"""
 if __name__ == '__main__':
