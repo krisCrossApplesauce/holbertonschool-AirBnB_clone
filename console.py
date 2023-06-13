@@ -68,7 +68,7 @@ class HBNBCommand(cmd.Cmd):
 
     def do_destroy(self, line):
         """ detroys given instance """
-        if line is None and line == "":
+        if line is None or line == "":
             print("** class name missing **")
         else:
             args = line.split(" ")
