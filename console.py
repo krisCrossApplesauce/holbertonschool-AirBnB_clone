@@ -4,8 +4,9 @@ import cmd
 import os
 import json
 from models.models import models_dict
-from model.base_model import BaseModel
-from file_storage import FileStorage
+from models.base_model import BaseModel
+from models.engine.file_storage import FileStorage
+from models import storage
 
 
 class HBNBCommand(cmd.Cmd):
@@ -65,6 +66,7 @@ class HBNBCommand(cmd.Cmd):
         print(obj_dict[key])
 
     def do_destroy(self, line):
+        from models import storage
         if line is None and line == "":
             print("** class name missing **")
         else:
@@ -77,7 +79,7 @@ class HBNBCommand(cmd.Cmd):
                 print("** no instance found **")
             else:
                 with open("file.json", "w") as file:
-                    json.dump(data, file) # CHANGES NEEDED HERE <----------------------
+                    storage.remove(args[0].args[1])
                 pass
 
     def do_all(self, arg):
