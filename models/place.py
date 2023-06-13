@@ -21,7 +21,6 @@ class Place(BaseModel):
             amenity_ids: list of strings or empty list (eventually amenity.id)
     """
 
-
     city_id = ""
     user_id = ""
     name = ""
