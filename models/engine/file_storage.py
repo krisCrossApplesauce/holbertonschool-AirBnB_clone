@@ -7,6 +7,7 @@ import json
 import os
 from models.base_model import BaseModel
 
+
 class FileStorage:
     """read/write and serialization for json storage"""
     __file_path = "file.json"
@@ -34,7 +35,7 @@ class FileStorage:
         with open(self.__file_path, 'w') as file:
             json.dump(ser_obj, file)
 
-    def reload(self): # double check this!
+    def reload(self):
         """deseriealize json file into __objects if it exists"""
         if os.path.exists(self.__file_path):
             with open(self.__file_path, 'r') as file:
