@@ -71,7 +71,7 @@ class HBNBCommand(cmd.Cmd):
         if line is None and line == "":
             print("** class name missing **")
         else:
-            args = line.split(" ")
+            args = line.split()
             if args[0] not in models_dict.keys():
                 print("** class doesn't exist **")
             elif len(args) < 2:
@@ -81,7 +81,6 @@ class HBNBCommand(cmd.Cmd):
             else:
                 with open("file.json", "w") as file:
                     models.storage.remove(f"{args[0]}.{args[1]}")
-                    pass
 
     def do_all(self, arg):
         """prints string rep of existing instances"""
