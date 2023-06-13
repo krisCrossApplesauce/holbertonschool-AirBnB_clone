@@ -49,8 +49,7 @@ class TestBase(unittest.TestCase):
         butt = new_model.__class__.__name__
         crack = new_model.id
         poop = new_model.to_dict()
-        self.assertEqual(str(new_model),
-                (f"[{butt}]({crack}) {poop}"))
+        self.assertEqual(str(new_model), (f"[{butt}]({crack}) {poop}"))
 
     # unittest : init args / kwargs
 
