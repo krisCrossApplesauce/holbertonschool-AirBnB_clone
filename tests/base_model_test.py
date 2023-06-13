@@ -6,13 +6,14 @@ from unittest.mock import patch
 from io import StringIO
 import os
 
+
 class TestBase(unittest.TestCase):
     """
     TEST: BASE CLASS TESTS
     """
     def test_save(self):
         """
-        TEST: 
+        TEST:
         BaseMethod - save creates a save file
         """
         self.assertNotEqual(self.model.created_at, self.model.updated_at)
@@ -23,10 +24,10 @@ class TestBase(unittest.TestCase):
         new_model2 = BaseModel()
         new_model = new_model2
         self.assertIsInstance(new_model.updated_at, "%Y-%m-%dT%H:%M:%S.%f")
-    
+
     def test_dict(self):
         """
-        TEST: 
+        TEST:
         dict creates a str for updated and created
         and new instance class matches class name
         ADDING MORE STUFF BELOW LMAO (maybe itll work lol)
@@ -45,8 +46,11 @@ class TestBase(unittest.TestCase):
         ___str___ method creates string instance
         """
         new_model = BaseModel()
+        butt = new_model.__class__.__name__
+        crack = new_model.id
+        poop = new_model.to_dict()
         self.assertEqual(str(new_model),
-            (f"[{new_model.__class__.__name__}] ({new_model.id}) {new_model.to_dict()}"))
+            (f"[{butt}]({crack}) {poop}"))
 
     # unittest : init args / kwargs
 
