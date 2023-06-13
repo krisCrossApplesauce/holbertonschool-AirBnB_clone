@@ -90,7 +90,7 @@ class HBNBCommand(cmd.Cmd):
             print("** class doesn't exist **")
             return
         else:
-            for key, obj in models.items():
+            for obj in models.storage.all():
                 if isinstance(obj, models_dict[arg]):
                     buff_list.append(str(obj))
         return buff_list
