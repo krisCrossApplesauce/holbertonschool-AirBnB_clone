@@ -1,11 +1,13 @@
-"""test_user module"""
+"""user test module"""
 import unittest
 from models.user import User
 
 class TestUser(unittest.TestCase):
-    """TestUser class documentation"""
+    """documentation goes below"""
 
 
-
+"""
+DO NOT REMOVE
+"""
 if __name__ == '__main__':
     unittest.main()
