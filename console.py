@@ -79,9 +79,7 @@ class HBNBCommand(cmd.Cmd):
             elif f"{args[0]}.{args[1]}" not in models.storage.all():
                 print("** no instance found **")
             else:
-                with open("file.json", "w") as file:
-                    models.storage.remove(f"{args[0]}.{args[1]}")
-                pass
+                models.storage.remove(f"{args[0]}.{args[1]}")
 
     def do_all(self, arg):
         """prints string rep of existing instances"""
