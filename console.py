@@ -84,7 +84,7 @@ class HBNBCommand(cmd.Cmd):
     def do_all(self, arg):
         """prints string rep of existing instances"""
         buff_list = []
-        if arg not in models_dict.keys() and arg != "":
+        if arg not in models_dict.keys() or arg != "":
             print("** class doesn't exist **")
             return
         else:
@@ -93,7 +93,23 @@ class HBNBCommand(cmd.Cmd):
                     buff_list.append(str(obj))
         return buff_list
 
-    # update
+    def do_update(self, arg):
+        """UPDATES an inst class name and id"""
+        args = arg.split()
+        if not arg:
+            print("** class name is missing **")
+        if arg[0] not in models_dict:
+            print("** class doesn't exists **")
+        if not models.storage.all():
+            print("** no instance found **")
+        if len(args) < 2:
+            print("** instance id missing **")
+        if len(args) < 3:
+            print("** attribute name missing **")
+        if len(args) < 4:
+            print("** value missing **")
+        setattr(models.storage.all(), args[0], args[3])
+        args[3].save()
 
 if __name__ == '__main__':
     HBNBCommand().cmdloop()
