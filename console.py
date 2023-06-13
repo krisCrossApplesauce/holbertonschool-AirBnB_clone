@@ -82,12 +82,11 @@ class HBNBCommand(cmd.Cmd):
         buff_list = []
         if arg not in models_dict.keys() or arg != "":
             print("** class doesn't exist **")
-            return
         else:
             for obj in models.storage.all():
                 if isinstance(obj, models_dict[arg]):
                     buff_list.append(str(obj))
-        return buff_list
+            return buff_list
 
     # update
 
