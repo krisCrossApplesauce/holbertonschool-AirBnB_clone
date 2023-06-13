@@ -80,7 +80,7 @@ class HBNBCommand(cmd.Cmd):
     def do_all(self, arg):
         """prints string rep of existing instances"""
         buff_list = []
-        if arg not in models_dict.keys() and arg != "":
+        if arg not in models_dict.keys() or arg != "":
             print("** class doesn't exist **")
             return
         else:
