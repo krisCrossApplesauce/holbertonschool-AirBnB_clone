@@ -76,7 +76,7 @@ class HBNBCommand(cmd.Cmd):
                 print("** class doesn't exist **")
             elif len(args) < 2:
                 print("** instance id missing **")
-            elif "{args[0]}.{args[1]}" not in models.storage.all():
+            elif f"{args[0]}.{args[1]}" not in models.storage.all():
                 print("** no instance found **")
             else:
                 with open("file.json", "w") as file:
