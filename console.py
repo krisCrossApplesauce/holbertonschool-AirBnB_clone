@@ -100,8 +100,7 @@ class HBNBCommand(cmd.Cmd):
         elif len(args) < 4:
             print("** value missing **")
         else:
-            setattr(models.storage.all(), f"{args[0]}.{args[1]}", args[3])
-            args[3].save()
+            models.storage.update(models.storage.all()[f"{args[0]}.{args[1]}"], args[2], args[3])
 
 if __name__ == '__main__':
     HBNBCommand().cmdloop()
