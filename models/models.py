@@ -6,15 +6,15 @@ IMPORT ALL THE STUFF NEEDED FOR A DICT
 from models.base_model import BaseModel
 from models.amenity import Amenity
 from models.city import City
-from models.State import State
-from models.Place import Place
-from models.Review import Review
-from models.User import User
+from models.state import State
+from models.place import Place
+from models.review import Review
+from models.user import User
 
 """
 model dictionary here
 """
-models_dict = {
+models_dict = dict({
     ("BaseModel", BaseModel),
     ("Amenity", Amenity),
     ("City", City),
@@ -22,4 +22,4 @@ models_dict = {
     ("Place", Place),
     ("Review", Review),
     ("User", User)
-}
+})
