@@ -29,7 +29,7 @@ Documented commands (type help <topic>):
 ========================================
 EOF  all  create  destroy  help  quit  show  update
 
-(hbnb) all MyModel
+(hbnb) all
 -
 ["[BaseModel] (0eb4d19f-e54e-40fc-9ed8-74a72c468f54) {'id': '0eb4d19f-e54e-40fc-9ed8-74a72c468f54', 'created_at': datetime.datetime(2023, 6, 13, 18, 51, 13, 445268), 'updated_at': datetime.datetime(2023, 6, 13, 18, 51, 13, 445283)}", "[User] (92c8391f-1a16-4f7a-9818-e94cafa23c2b) {'id': '92c8391f-1a16-4f7a-9818-e94cafa23c2b', 'created_at': datetime.datetime(2023, 6, 13, 18, 51, 16, 139695), 'updated_at': datetime.datetime(2023, 6, 13, 18, 51, 16, 139715)}", "[City] (59872cd1-0692-40a2-8bd8-65184643a1fd) {'id': '59872cd1-0692-40a2-8bd8-65184643a1fd', 'created_at': datetime.datetime(2023, 6, 13, 18, 51, 18, 575985), 'updated_at': datetime.datetime(2023, 6, 13, 18, 51, 18, 575999)}", "[Place] (ae50374c-3e75-4e7d-b120-13711cca53a8) {'id': 'ae50374c-3e75-4e7d-b120-13711cca53a8', 'created_at': datetime.datetime(2023, 6, 13, 18, 51, 21, 143996), 'updated_at': datetime.datetime(2023, 6, 13, 18, 51, 21, 144011)}", "[State] (92a677f3-fd9f-4993-9f9b-823f490bff13) {'id': '92a677f3-fd9f-4993-9f9b-823f490bff13', 'created_at': datetime.datetime(2023, 6, 13, 18, 51, 24, 369156), 'updated_at': datetime.datetime(2023, 6, 13, 18, 51, 24, 369170)}", "[Amenity] (8f7ab8c0-bff4-4dc1-b59a-81907ca7fe4a) {'id': '8f7ab8c0-bff4-4dc1-b59a-81907ca7fe4a', 'created_at': datetime.datetime(2023, 6, 13, 18, 51, 27, 317225), 'updated_at': datetime.datetime(2023, 6, 13, 18, 51, 27, 317242)}"]
 -
