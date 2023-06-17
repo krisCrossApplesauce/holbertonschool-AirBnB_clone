@@ -47,7 +47,7 @@ EOF  all  create  destroy  help  quit  show  update
 
 Flow and Capability of the Program:
 * Create instances of an object at the users discretion, inheriting from any needed classes
-* Manipulate data within loaded object instances
+* Manipulate data within loaded object instances, or delete the instance
 * Serialize an object instance into a json file for convenient storage
 * De-Serialize a json file (re-load saved object instances), openening it 
 * Manipulate data again, rinse and repeat above steps as needed
