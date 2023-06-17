@@ -45,7 +45,12 @@ EOF  all  create  destroy  help  quit  show  update
 ![flowchart gumapple](https://github.com/krisCrossApplesauce/holbertonschool-AirBnB_clone/assets/23125776/6615bb64-22da-4b74-8cbc-6c1ceabd3670)
 ![flowchart_marker](https://github.com/krisCrossApplesauce/holbertonschool-AirBnB_clone/assets/23125776/a216f68a-3843-4321-9d05-5831d893de42)
 
-
+Flow and Capability of the Program:
+1.) Create instances of an object at the users discretion, inheriting from any needed classes
+2.) Manipulate data within loaded object instances
+3.) Serialize an object instance into a json file for convenient storage
+4.) De-Serialize a json file (re-load saved object instances), openening it 
+5.) Manipulate data again, rinse and repeat above steps as needed
 
 
 
