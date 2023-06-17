@@ -21,6 +21,7 @@ This repo aims to act as a clone build of the web application AirBnB that aims t
 
 
 ## Use Case Examples
+* the entry point for the program is console.py
 ```bash
 Apple&Gum_AirBnB_clone$./console.py
 (hbnb) help
