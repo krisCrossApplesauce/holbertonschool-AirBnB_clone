@@ -11,13 +11,22 @@ This repo aims to act as a clone build of the web application AirBnB that aims t
 
 ## Command Line Interpreter with the following Requisites and Functionalities
 * Built upon the CMD module
-* Create a new instance of BaseModel and save it to JSON and prints the ID
-* Retrieve data from a database
+* Save user-made changes into json file storage
 * Operate on objects individually using commands
+* Create a new instance of BaseModel and save it to JSON and prints the ID
+*   create: creates new instance of basemodel, saves it to json type file and prints id
+* Retrieve data from a database
+*   show - prints string representation of an instance, using class name and id to specify
 * Destroy an instance based on the class name and ID
-* Update an instance based on the class name and ID by adding or updating attribute
-* Print a string representation of an instance based on the class name and ID
-* Save all user-made changes into a JSON file
+*   destroy - deletes an instance, specified by class name and id
+* Update the ID or attribute of an instance 
+*   update - update an instance based on the class name and ID by adding or updating attributes
+* Print out readable information on an instance 
+*   all - prints a string representation of an instance based on the class name and ID
+* Exit the console
+*   quit or EOF - terminates the program
+* Do nothing!
+*   <emptyline> - overwrites the default emptyline command and does nothing!
 
 
 ## Use Case Examples
