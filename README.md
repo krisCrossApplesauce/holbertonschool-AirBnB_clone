@@ -26,7 +26,7 @@ This repo aims to act as a clone build of the web application AirBnB that aims t
 * Exit the console
 * --- quit or EOF - terminates the program
 * Do nothing!
-* --- <emptyline> - overwrites the default emptyline command and does nothing!
+* --- < emptyline > - overwrites the default emptyline command and does nothing!
 
 
 ## Use Case Examples
