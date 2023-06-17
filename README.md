@@ -13,6 +13,7 @@ This repo aims to act as a clone build of the web application AirBnB that aims t
 * Built upon the CMD module
 * Save user-made changes into json file storage
 * Operate on objects individually using commands
+-----------------------------------------------------------------------------
 * Create a new instance of BaseModel and save it to JSON and prints the ID
 * --- create: creates new instance of basemodel, saves it to json type file and prints id
 * Retrieve data from a database
