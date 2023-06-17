@@ -46,7 +46,7 @@ EOF  all  create  destroy  help  quit  show  update
 ![flowchart_marker](https://github.com/krisCrossApplesauce/holbertonschool-AirBnB_clone/assets/23125776/a216f68a-3843-4321-9d05-5831d893de42)
 
 Flow and Capability of the Program:
-* Create instances of an object at the users discretion, inheriting from any needed classes
+* Create instances of an object at the users discretion, inheriting from any needed classes and creating a uuid for the instance
 * Manipulate data within loaded object instances, or delete the instance
 * Serialize an object instance into a json file for convenient storage
 * De-Serialize a json file (re-load saved object instances), openening it 
