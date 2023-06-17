@@ -14,19 +14,19 @@ This repo aims to act as a clone build of the web application AirBnB that aims t
 * Save user-made changes into json file storage
 * Operate on objects individually using commands
 * Create a new instance of BaseModel and save it to JSON and prints the ID
-*   create: creates new instance of basemodel, saves it to json type file and prints id
+* --- create: creates new instance of basemodel, saves it to json type file and prints id
 * Retrieve data from a database
-*   show - prints string representation of an instance, using class name and id to specify
+* --- show - prints string representation of an instance, using class name and id to specify
 * Destroy an instance based on the class name and ID
-*   destroy - deletes an instance, specified by class name and id
+* --- destroy - deletes an instance, specified by class name and id
 * Update the ID or attribute of an instance 
-*   update - update an instance based on the class name and ID by adding or updating attributes
+* --- update - update an instance based on the class name and ID by adding or updating attributes
 * Print out readable information on an instance 
-*   all - prints a string representation of an instance based on the class name and ID
+* --- all - prints a string representation of an instance based on the class name and ID
 * Exit the console
-*   quit or EOF - terminates the program
+* --- quit or EOF - terminates the program
 * Do nothing!
-*   <emptyline> - overwrites the default emptyline command and does nothing!
+* --- <emptyline> - overwrites the default emptyline command and does nothing!
 
 
 ## Use Case Examples
