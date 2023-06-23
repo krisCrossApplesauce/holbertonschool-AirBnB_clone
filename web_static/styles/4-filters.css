@@ -17,6 +17,6 @@
 	right: 30px;
 }
 
-section.filters button::hover {
+section.filters button:hover {
 	opacity: 90%;
 }
