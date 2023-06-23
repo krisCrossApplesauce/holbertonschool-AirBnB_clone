@@ -4,29 +4,63 @@ import unittest
 from models.base import BaseModel
 from unittest.mock import patch
 from io import StringIO
+import os
+
 
 class TestBase(unittest.TestCase):
     """
     TEST: BASE CLASS TESTS
     """
     def test_save(self):
-        """TEST: save creates a saved file"""
-        b1 = BaseModel()
-        saved_data = BaseModel.save([b1])
-        self.assertEqual(len(saved_data), b1.updated_at) 
-            # compare saved data to updated_at of new instance
+        """
+        TEST:
+        BaseMethod - save creates a save file
+        """
+        new_model = BaseModel()
+        save = new_model.updated_at
+        new_model.save()
+        self.assertTrue(os.path.exists("file.json"))
+        save2 = new_model.updated_at
+        self.assertNotEqual(save, save2)
+
+    def test_created_at(self):
+        """
+        TEST:
+        creation and updating makes new uuid4
+        """
+        new_model = BaseModel()
+        self.assertIsInstance(new_model.create_at, "%Y-%m-%dT%H:%M:%S.%f")
+        new_model2 = BaseModel()
+        new_model = new_model2
+        self.assertIsInstance(new_model.updated_at, "%Y-%m-%dT%H:%M:%S.%f")
 
     def test_dict(self):
-        """TEST: dict creates two strings for each updated and created
-        also, the created class for the instance == class name
         """
-        b2 = BaseModel()
-        b2 = self.__dict__copy()
-        self.assertIsInstance(self.create_at, "%Y-%m-%dT%H:%M:%S.%f")
-        self.assertIsInstance(self.updated_at, "%Y-%m-%dT%H:%M:%S.%f")
-        for element in self.__dict__
-            self.assertEqual(b1['class'], self.__dict__.__class__) 
-                # compare created dict keys to class names of the instance
+        TEST:
+        dict creates a str for updated and created
+        and new instance class matches class name
+        ADDING MORE STUFF BELOW LMAO (maybe itll work lol)
+        (AHHHH)
+        (oh lol)
+        """
+        new_model = BaseModel()
+        new_dict = new_model.to_dict()
+        self.assertIsInstance(new_dict, dict)
+        self.assertIsInstance(new_dict["created_at"], str)
+        self.assertIsInstance(new_dict["updated_at"], str)
+
+    def test_str(self):
+        """
+        TEST:
+        ___str___ method creates string instance
+        """
+        new_model = BaseModel()
+        butt = new_model.__class__.__name__
+        crack = new_model.id
+        poop = new_model.to_dict()
+        self.assertEqual(str(new_model), (f"[{butt}]({crack}) {poop}"))
+
+    # unittest : init args / kwargs
 
 """DO NOT REMOVE"""
 if __name__ == '__main__':
