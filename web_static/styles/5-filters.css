@@ -25,14 +25,18 @@
 }
 
 .filters .locations {
+	position: absolute;
 	height: 100%;
 	width: 25%;
 	border-right: 1px solid #DDDDDD;
+	margin: 15px 30px;
 }
 
 .filters .amenities {
+	position: absolute;
 	height: 100%;
 	width: 25%;
+	margin: 15px 30px;
 }
 
 .filters .locations h3, .filters .amenities h3 {
@@ -42,4 +46,5 @@
 .filters .locations h4, .filters .amenities h4 {
 	font-weight: 400;
 	font-size: 14px;
+	margin-top: 5px;
 }
